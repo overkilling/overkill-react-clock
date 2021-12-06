@@ -6,22 +6,24 @@
 
 ![Overkill React Clock](/.github/sample.png?raw=true)
 
-This is an extreme, overengineered, example of a ticking clock webapp. 
+This is an extreme, overengineered, example of a ticking clock webapp.
 The starting point is the basic clock [from the React documentation](https://reactjs.org/docs/rendering-elements.html).
-From this starting point, each commit will introduce new technologies and techniques. 
-This codebase *in no way* represents production-ready code.
+From this starting point, each commit will introduce new technologies and techniques.
+This codebase _in no way_ represents production-ready code.
 Nonetheless, it's a fun way to pickup and learn a few technologies.
 
 The notable technologies used are:
-* [React](https://reactjs.org/): a JavaScript library for building user interfaces
-* [Redux](https://redux.js.org/): a Predictable State Container for JS Apps
-* [Redux-Saga](https://redux-saga.js.org/): an alternative side effect model for Redux apps
+
+- [React](https://reactjs.org/): a JavaScript library for building user interfaces
+- [Redux](https://redux.js.org/): a Predictable State Container for JS Apps
+- [Redux-Saga](https://redux-saga.js.org/): an alternative side effect model for Redux apps
 
 ## Getting started
 
 Prequisites:
-* [Node.JS](https://nodejs.org/) (version tested 12.16.1)
-* [Yarn](https://yarnpkg.com/)
+
+- [Node.JS](https://nodejs.org/) (version tested 16.13.1)
+- [Yarn](https://yarnpkg.com/)
 
 Clone the codebase to your local machine
 
@@ -30,30 +32,30 @@ Clone the codebase to your local machine
 Install all dependencies
 
     yarn install
-    
+
 Run all tests and style checks
 
     yarn test
     yarn prettier-check
-    
+
 Start the application
 
     yarn start
-    
- And that's it! Have fun playing with it!
- 
- ## Building and running a Docker image
- 
- To build this webapp as a Docker image
- 
+
+And that's it! Have fun playing with it!
+
+## Building and running a Docker image
+
+To build this webapp as a Docker image
+
     docker build -t overkill-react-clock .
-    
- And to run it
- 
+
+And to run it
+
     docker run -p 80:80 overkill-react-clock
- 
- ## Notable commits
- 
+
+## Notable commits
+
 - [Basic React clock from documentation](768a52967c4a2d30f50bc826a3bb0130d3b75e36)
 - [Convert element into a functional component](55b8d8eb22df367bb80fcb2231f3590f272065d4)
 - [Convert to ES6 style function](85573c4c02f380011e6a33c34b060b002818b565)
