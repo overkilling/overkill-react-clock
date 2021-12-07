@@ -1,18 +1,16 @@
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Button,
   Container,
   Dialog,
-  DialogTitle as MuiDialogTitle,
   DialogContent as MuiDialogContent,
+  DialogTitle as MuiDialogTitle,
   IconButton,
-  createStyles,
-  Theme,
-  withStyles,
-  WithStyles
-} from '@material-ui/core'
+  Theme
+} from '@mui/material'
+import { createStyles, withStyles, WithStyles } from '@mui/styles'
 import * as React from 'react'
 import { useState } from 'react'
-import CloseIcon from '@material-ui/icons/Close'
 
 const styles = (theme: Theme) =>
   createStyles({

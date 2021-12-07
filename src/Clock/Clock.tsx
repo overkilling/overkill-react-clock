@@ -1,4 +1,4 @@
-import { Container } from '@material-ui/core'
+import { Container } from '@mui/material'
 import * as React from 'react'
 import { useSelector } from 'react-redux'
 import { CombinedState } from '../types'

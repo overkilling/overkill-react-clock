@@ -1,5 +1,4 @@
-import { Typography } from '@material-ui/core'
-import { styled } from '@material-ui/core/styles'
+import { Typography, styled } from '@mui/material'
 import { theme } from './theme'
 
 export const Title = styled(Typography)({

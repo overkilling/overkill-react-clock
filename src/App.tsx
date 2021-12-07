@@ -1,5 +1,4 @@
-import { Container } from '@material-ui/core'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { Container, ThemeProvider } from '@mui/material'
 import * as React from 'react'
 import { Provider } from 'react-redux'
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'

@@ -1,4 +1,4 @@
-import SettingsIcon from '@material-ui/icons/Settings'
+import SettingsIcon from '@mui/icons-material/Settings'
 import moment from 'moment'
 import 'moment-timezone'
 import * as React from 'react'

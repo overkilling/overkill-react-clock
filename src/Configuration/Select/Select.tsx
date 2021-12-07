@@ -1,4 +1,9 @@
-import { FormControl, InputLabel, Select as MuiSelect } from '@material-ui/core'
+import {
+  FormControl,
+  InputLabel,
+  Select as MuiSelect,
+  SelectChangeEvent
+} from '@mui/material'
 import * as React from 'react'
 import { useState } from 'react'
 
@@ -20,7 +25,7 @@ const optionsFrom = (items: string[]) => {
 export const Select = ({ name, items, selected, onSelection }: SelectProps) => {
   const selectId = name.toLowerCase().replace(' ', '_')
   const [selectedItem, setSelectedItem] = useState(selected)
-  const onChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const onChange = (event: SelectChangeEvent<unknown>) => {
     const stringValue = event.target.value as string
     setSelectedItem(stringValue)
     onSelection(stringValue)

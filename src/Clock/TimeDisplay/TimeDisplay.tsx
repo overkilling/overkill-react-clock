@@ -1,4 +1,4 @@
-import { styled, Typography } from '@material-ui/core'
+import { styled, Typography } from '@mui/material'
 import moment from 'moment'
 import 'moment-timezone'
 import * as React from 'react'

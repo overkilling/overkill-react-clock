@@ -1,3 +1,4 @@
+import { createTheme, ThemeProvider } from '@mui/material'
 import { fireEvent, render } from '@testing-library/react'
 import * as React from 'react'
 import { ClosablePanel } from './ClosablePanel'
@@ -6,9 +7,11 @@ describe('ClosablePanel component', () => {
   describe('className', () => {
     it('can be open', () => {
       const { getByText } = render(
-        <ClosablePanel title="classtest" open={true}>
-          Inside the panel
-        </ClosablePanel>
+        <ThemeProvider theme={createTheme()}>
+          <ClosablePanel title="classtest" open={true}>
+            Inside the panel
+          </ClosablePanel>
+        </ThemeProvider>
       )
 
       expect(getByText('Inside the panel')).toBeVisible()
@@ -16,9 +19,11 @@ describe('ClosablePanel component', () => {
 
     it('can be closed', () => {
       const { queryByText } = render(
-        <ClosablePanel title="classtest" open={false}>
-          Inside the panel
-        </ClosablePanel>
+        <ThemeProvider theme={createTheme()}>
+          <ClosablePanel title="classtest" open={false}>
+            Inside the panel
+          </ClosablePanel>
+        </ThemeProvider>
       )
 
       expect(queryByText('Inside the panel')).not.toBeInTheDocument()
@@ -28,7 +33,9 @@ describe('ClosablePanel component', () => {
   describe('button', () => {
     it('renders title', () => {
       const { getByText, queryByTestId } = render(
-        <ClosablePanel title="Some panel" open={false} />
+        <ThemeProvider theme={createTheme()}>
+          <ClosablePanel title="Some panel" open={false} />
+        </ThemeProvider>
       )
 
       expect(getByText('Some panel')).toBeInTheDocument()
@@ -38,11 +45,13 @@ describe('ClosablePanel component', () => {
     it('renders title with icon', () => {
       const Icon = () => <i data-testid="icon">Some Icon</i>
       const { queryByText, getByTestId } = render(
-        <ClosablePanel
-          title="Some panel with icon"
-          icon={<Icon />}
-          open={false}
-        />
+        <ThemeProvider theme={createTheme()}>
+          <ClosablePanel
+            title="Some panel with icon"
+            icon={<Icon />}
+            open={false}
+          />
+        </ThemeProvider>
       )
 
       expect(getByTestId('icon')).toBeInTheDocument()
@@ -53,10 +62,12 @@ describe('ClosablePanel component', () => {
   describe('children', () => {
     it('renders children inside', () => {
       const { getByText } = render(
-        <ClosablePanel title="childrentest" open={true}>
-          <p>This should be inside</p>
-          <p>So should this</p>
-        </ClosablePanel>
+        <ThemeProvider theme={createTheme()}>
+          <ClosablePanel title="childrentest" open={true}>
+            <p>This should be inside</p>
+            <p>So should this</p>
+          </ClosablePanel>
+        </ThemeProvider>
       )
 
       expect(getByText('This should be inside')).toBeInTheDocument()
@@ -67,9 +78,11 @@ describe('ClosablePanel component', () => {
   describe('toggling', () => {
     it('closes an open panel by clicking the title', () => {
       const { getAllByText, getByText } = render(
-        <ClosablePanel title="toggletest" open={true}>
-          Inside the panel
-        </ClosablePanel>
+        <ThemeProvider theme={createTheme()}>
+          <ClosablePanel title="toggletest" open={true}>
+            Inside the panel
+          </ClosablePanel>
+        </ThemeProvider>
       )
 
       fireEvent.click(getAllByText('toggletest')[0])
@@ -78,9 +91,11 @@ describe('ClosablePanel component', () => {
 
     it('opens a closed panel by clicking the title', () => {
       const { getByText } = render(
-        <ClosablePanel title="toggletest" open={false}>
-          Inside the panel
-        </ClosablePanel>
+        <ThemeProvider theme={createTheme()}>
+          <ClosablePanel title="toggletest" open={false}>
+            Inside the panel
+          </ClosablePanel>
+        </ThemeProvider>
       )
 
       fireEvent.click(getByText('toggletest'))

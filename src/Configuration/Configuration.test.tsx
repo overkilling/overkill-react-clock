@@ -4,6 +4,7 @@ import { render, fireEvent } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { Configuration } from './Configuration'
 import { updateFormat, updateTimezone } from './actions'
+import { createTheme, ThemeProvider } from '@mui/material'
 
 describe('Configuration component', () => {
   let mockStore = configureStore([])({ clock: {}, configuration: {} })
@@ -11,7 +12,9 @@ describe('Configuration component', () => {
   const renderComponent = () =>
     render(
       <Provider store={mockStore}>
-        <Configuration open={true} />
+        <ThemeProvider theme={createTheme()}>
+          <Configuration open={true} />
+        </ThemeProvider>
       </Provider>
     )
 
