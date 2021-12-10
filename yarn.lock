@@ -1388,7 +1388,7 @@
     jest-util "^27.4.2"
     slash "^3.0.0"
 
-"@jest/core@^27.4.3", "@jest/core@^27.4.4":
+"@jest/core@^27.4.4":
   version "27.4.4"
   resolved "https://registry.yarnpkg.com/@jest/core/-/core-27.4.4.tgz#f2ba293235ca23fb48b4b923ccfe67c17e791a92"
   integrity sha512-xBNPVqYAdAiAMXnb4ugx9Cdmr0S52lBsLbQMR/sGBRO0810VSPKiuSDtuup6qdkK1e9vxbv3KK3IAP1QFAp8mw==
@@ -1937,7 +1937,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@^6.4.8":
+"@storybook/addon-actions@^6.4.9":
   version "6.4.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.4.9.tgz#1d4e8c00ad304efe6722043dac759f4716b515ee"
   integrity sha512-L1N66p/vr+wPUBfrH3qffjNAcWSS/wvuL370T7cWxALA9LLA8yY9U2EpITc5btuCC5QOxApCeyHkFnrBhNa94g==
@@ -1961,7 +1961,7 @@
     util-deprecate "^1.0.2"
     uuid-browser "^3.1.0"
 
-"@storybook/addons@6.4.9", "@storybook/addons@^6.4.8":
+"@storybook/addons@6.4.9", "@storybook/addons@^6.4.9":
   version "6.4.9"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.4.9.tgz#43b5dabf6781d863fcec0a0b293c236b4d5d4433"
   integrity sha512-y+oiN2zd+pbRWwkf6aQj4tPDFn+rQkrv7fiVoMxsYub+kKyZ3CNOuTSJH+A1A+eBL6DmzocChUyO6jvZFuh6Dg==
@@ -2436,7 +2436,7 @@
     react-docgen-typescript "^2.0.0"
     tslib "^2.0.0"
 
-"@storybook/react@^6.4.8":
+"@storybook/react@^6.4.9":
   version "6.4.9"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.4.9.tgz#0b5effb07cf98bc73302b5486b9355ed545ee9fa"
   integrity sha512-GVbCeii2dIKSD66pAdn9bY7mRoOzBE6ll+vRDW1n00FIvGfckmoIZtQHpurca7iNTAoufv8+t0L9i7IItdrUuw==
@@ -7891,7 +7891,7 @@ jest-circus@^27.4.4:
     stack-utils "^2.0.3"
     throat "^6.0.1"
 
-jest-cli@^27.4.3:
+jest-cli@^27.4.4:
   version "27.4.4"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-27.4.4.tgz#7115ff01f605c2c848314141b1ac144099ddeed5"
   integrity sha512-+MfsHnZPUOBigCBURuQFRpgYoPCgmIFkICkqt4SrramZCUp/UAuWcst4pMZb84O3VU8JyKJmnpGG4qH8ClQloA==
@@ -8356,14 +8356,14 @@ jest-worker@^27.4.4:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@27.4.3:
-  version "27.4.3"
-  resolved "https://registry.yarnpkg.com/jest/-/jest-27.4.3.tgz#cf7d1876a84c70efece2e01e4f9dfc2e464d9cbb"
-  integrity sha512-jwsfVABBzuN3Atm+6h6vIEpTs9+VApODLt4dk2qv1WMOpb1weI1IIZfuwpMiWZ62qvWj78MvdvMHIYdUfqrFaA==
+jest@27.4.4:
+  version "27.4.4"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-27.4.4.tgz#9b1aa1db25d0b13477a49d18e22ba7cdff97105b"
+  integrity sha512-AXwEIFa58Uf1Jno3/KSo5HZZ0/2Xwqvfrz0/3bmTwImkFlbOvz5vARAW9nTrxRLkojjkitaZ1KNKAtw3JRFAaA==
   dependencies:
-    "@jest/core" "^27.4.3"
+    "@jest/core" "^27.4.4"
     import-local "^3.0.2"
-    jest-cli "^27.4.3"
+    jest-cli "^27.4.4"
 
 jju@^1.1.0:
   version "1.4.0"
@@ -12470,7 +12470,7 @@ typescript-tuple@^2.2.1:
   dependencies:
     typescript-compare "^0.0.2"
 
-typescript@^4.5.2:
+typescript@^4.5.3:
   version "4.5.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.3.tgz#afaa858e68c7103317d89eb90c5d8906268d353c"
   integrity sha512-eVYaEHALSt+s9LbvgEv4Ef+Tdq7hBiIZgii12xXJnukryt3pMgJf6aKhoCZ3FWQsu6sydEnkg11fYXLzhLBjeQ==
