@@ -1,6 +1,6 @@
 import SettingsIcon from '@mui/icons-material/Settings'
-import moment from 'moment'
-import 'moment-timezone'
+import { getTimeZones } from '@vvo/tzdb'
+import { DateTime } from 'luxon'
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CombinedState } from '../types'
@@ -9,7 +9,7 @@ import { ClosablePanel } from './ClosablePanel'
 import { Select } from './Select'
 import { Format } from './types'
 
-const formats: Format[] = ['HH:mm:ss', 'h:mm:ss A', 'HH:mm', 'h:mm A']
+const formats: Format[] = ['HH:mm:ss', 'h:mm:ss a', 'HH:mm', 'h:mm a']
 
 interface ConfigurationProps {
   open?: boolean
@@ -36,8 +36,8 @@ export const Configuration = ({ open = false }: ConfigurationProps) => {
       />
       <Select
         name="Timezone"
-        items={moment.tz.names()}
-        selected={timezone || moment.tz.guess()}
+        items={getTimeZones().map(tz => tz.name)}
+        selected={timezone || DateTime.now().zoneName}
         onSelection={onTimezoneSelection}
       />
     </ClosablePanel>

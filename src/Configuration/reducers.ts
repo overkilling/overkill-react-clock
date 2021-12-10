@@ -1,11 +1,10 @@
 import { ConfigurationState } from './types'
 import { AnyAction } from 'redux'
-import moment from 'moment'
-import 'moment-timezone'
+import { DateTime } from 'luxon'
 
 const initialState = {
   format: 'HH:mm:ss',
-  timezone: moment.tz.guess()
+  timezone: DateTime.now().zoneName
 } as ConfigurationState
 
 export const configurationReducer = (

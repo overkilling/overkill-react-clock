@@ -14,7 +14,7 @@ describe('Reducer', () => {
       format: 'HH:mm:ss',
       timezone: 'Some timezone'
     } as ConfigurationState
-    const newFormat = 'h:mm A'
+    const newFormat = 'h:mm a'
     const action = updateFormat(newFormat)
 
     expect(reducer(state, action).format).toEqual(newFormat)

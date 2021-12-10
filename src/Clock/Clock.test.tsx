@@ -30,7 +30,7 @@ describe('Clock component', () => {
 
   it('renders on UPDATE_CLOCK action', () => {
     const testStore = createStore(reducers, {
-      configuration: { format: 'h:mm:ss A', timezone: 'Zulu' }
+      configuration: { format: 'h:mm:ss a', timezone: 'Europe/London' }
     })
     const { getByText } = render(
       <Provider store={testStore}>

@@ -1,6 +1,5 @@
 import { styled, Typography } from '@mui/material'
-import moment from 'moment'
-import 'moment-timezone'
+import { DateTime } from 'luxon'
 import * as React from 'react'
 
 interface PartOfDayProps {
@@ -15,7 +14,7 @@ const Information = styled(Typography)({
 })
 
 const partAt = (time: Date, timezone: string) => {
-  const hour = moment.tz(time, timezone).hour()
+  const hour = DateTime.fromJSDate(time, { zone: timezone }).hour
 
   if (hour >= 5 && hour < 12) {
     return 'morning'

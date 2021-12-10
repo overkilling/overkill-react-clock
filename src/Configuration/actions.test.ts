@@ -2,11 +2,11 @@ import { updateFormat, updateTimezone } from './actions'
 
 describe('Actions', () => {
   it('return action for UPDATE_FORMAT', () => {
-    const action = updateFormat('h:mm A')
+    const action = updateFormat('h:mm a')
 
     expect(action).toEqual({
       type: 'UPDATE_FORMAT',
-      format: 'h:mm A'
+      format: 'h:mm a'
     })
   })
 

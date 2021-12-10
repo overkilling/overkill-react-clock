@@ -1,6 +1,5 @@
 import { styled, Typography } from '@mui/material'
-import moment from 'moment'
-import 'moment-timezone'
+import { DateTime } from 'luxon'
 import * as React from 'react'
 
 interface TimeDisplayProps {
@@ -17,6 +16,8 @@ const DigitalClock = styled(Typography)({
   marginBlockStart: '0em'
 })
 
-export const TimeDisplay = ({ time, format, timezone }: TimeDisplayProps) => (
-  <DigitalClock>{moment.tz(time, timezone).format(format)}</DigitalClock>
-)
+export const TimeDisplay = ({ time, format, timezone }: TimeDisplayProps) => {
+  const date = DateTime.fromJSDate(time, { zone: timezone })
+
+  return <DigitalClock>{date.toFormat(format)}</DigitalClock>
+}

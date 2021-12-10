@@ -33,9 +33,9 @@ describe('Configuration component', () => {
       const { getByText } = renderComponent()
 
       expect(getByText('HH:mm:ss')).toBeInTheDocument()
-      expect(getByText('h:mm:ss A')).toBeInTheDocument()
+      expect(getByText('h:mm:ss a')).toBeInTheDocument()
       expect(getByText('HH:mm')).toBeInTheDocument()
-      expect(getByText('h:mm A')).toBeInTheDocument()
+      expect(getByText('h:mm a')).toBeInTheDocument()
     })
 
     it('dispatches action when selecting format', () => {
@@ -56,7 +56,7 @@ describe('Configuration component', () => {
       const { getByText } = renderComponent()
 
       expect(getByText('America/Los_Angeles')).toBeInTheDocument()
-      expect(getByText('Zulu')).toBeInTheDocument()
+      expect(getByText('Europe/London')).toBeInTheDocument()
     })
 
     it('dispatches action when selecting timezone', () => {
@@ -64,11 +64,11 @@ describe('Configuration component', () => {
 
       fireEvent.change(getByLabelText('Timezone'), {
         target: {
-          value: 'Zulu'
+          value: 'Europe/London'
         }
       })
 
-      expect(mockStore.getActions()).toEqual([updateTimezone('Zulu')])
+      expect(mockStore.getActions()).toEqual([updateTimezone('Europe/London')])
     })
   })
 })
