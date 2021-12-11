@@ -48,7 +48,7 @@ And that's it! Have fun playing with it!
 
 To build this webapp as a Docker image
 
-    docker build -t overkill-react-clock .
+    docker build -t overkill-react-clock . -f infrastructure/Dockerfile
 
 And to run it
 
