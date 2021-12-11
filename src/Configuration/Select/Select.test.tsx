@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { render, fireEvent, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { render, screen } from '@testing-library/react'
 import { Select } from './Select'
 
 describe('Select component', () => {
@@ -58,11 +59,7 @@ describe('Select component', () => {
       )
 
       const select = screen.getByLabelText('Some Name') as HTMLSelectElement
-      fireEvent.change(select, {
-        target: {
-          value: 'item3'
-        }
-      })
+      userEvent.selectOptions(select, 'item3')
 
       expect(select.value).toEqual('item3')
       expect(onSelectionMock).toHaveBeenCalledWith('item3')

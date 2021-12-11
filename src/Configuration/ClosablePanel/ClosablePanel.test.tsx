@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from '@mui/material'
-import { fireEvent, render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { render, screen } from '@testing-library/react'
 import * as React from 'react'
 import { ClosablePanel } from './ClosablePanel'
 
@@ -89,7 +90,7 @@ describe('ClosablePanel component', () => {
         </Wrapper>
       )
 
-      fireEvent.click(screen.getAllByText('toggletest')[0])
+      userEvent.click(screen.getAllByText('toggletest')[0])
       expect(screen.getByText('Inside the panel')).not.toBeVisible()
     })
 
@@ -102,7 +103,7 @@ describe('ClosablePanel component', () => {
         </Wrapper>
       )
 
-      fireEvent.click(screen.getByText('toggletest'))
+      userEvent.click(screen.getByText('toggletest'))
       expect(screen.getByText('Inside the panel')).toBeVisible()
     })
   })

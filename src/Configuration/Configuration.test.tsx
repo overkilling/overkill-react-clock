@@ -1,6 +1,7 @@
 import * as React from 'react'
 import configureStore from 'redux-mock-store'
-import { render, fireEvent, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { Configuration } from './Configuration'
 import { updateFormat, updateTimezone } from './actions'
@@ -41,11 +42,7 @@ describe('Configuration component', () => {
     it('dispatches action when selecting format', () => {
       renderComponent()
 
-      fireEvent.change(screen.getByLabelText('Format'), {
-        target: {
-          value: 'HH:mm'
-        }
-      })
+      userEvent.selectOptions(screen.getByLabelText('Format'), 'HH:mm')
 
       expect(mockStore.getActions()).toEqual([updateFormat('HH:mm')])
     })
@@ -62,11 +59,10 @@ describe('Configuration component', () => {
     it('dispatches action when selecting timezone', () => {
       renderComponent()
 
-      fireEvent.change(screen.getByLabelText('Timezone'), {
-        target: {
-          value: 'Europe/London'
-        }
-      })
+      userEvent.selectOptions(
+        screen.getByLabelText('Timezone'),
+        'Europe/London'
+      )
 
       expect(mockStore.getActions()).toEqual([updateTimezone('Europe/London')])
     })
