@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
 import { Clock } from './Clock'
@@ -32,7 +32,7 @@ describe('Clock component', () => {
     const testStore = createStore(reducers, {
       configuration: { format: 'h:mm:ss a', timezone: 'Europe/London' }
     })
-    const { getByText } = render(
+    render(
       <Provider store={testStore}>
         <Clock />
       </Provider>
@@ -41,7 +41,7 @@ describe('Clock component', () => {
 
     testStore.dispatch(updateClock(newDate))
 
-    expect(getByText('4:30:07 PM')).toBeInTheDocument()
-    expect(getByText('It is afternoon')).toBeInTheDocument()
+    expect(screen.getByText('4:30:07 PM')).toBeInTheDocument()
+    expect(screen.getByText('It is afternoon')).toBeInTheDocument()
   })
 })

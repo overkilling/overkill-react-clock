@@ -1,6 +1,6 @@
 import * as React from 'react'
 import configureStore from 'redux-mock-store'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import { Provider } from 'react-redux'
 import { Configuration } from './Configuration'
 import { updateFormat, updateTimezone } from './actions'
@@ -30,18 +30,18 @@ describe('Configuration component', () => {
 
   describe('format', () => {
     it('renders format selector', () => {
-      const { getByText } = renderComponent()
+      renderComponent()
 
-      expect(getByText('HH:mm:ss')).toBeInTheDocument()
-      expect(getByText('h:mm:ss a')).toBeInTheDocument()
-      expect(getByText('HH:mm')).toBeInTheDocument()
-      expect(getByText('h:mm a')).toBeInTheDocument()
+      expect(screen.getByText('HH:mm:ss')).toBeInTheDocument()
+      expect(screen.getByText('h:mm:ss a')).toBeInTheDocument()
+      expect(screen.getByText('HH:mm')).toBeInTheDocument()
+      expect(screen.getByText('h:mm a')).toBeInTheDocument()
     })
 
     it('dispatches action when selecting format', () => {
-      const { getByLabelText } = renderComponent()
+      renderComponent()
 
-      fireEvent.change(getByLabelText('Format'), {
+      fireEvent.change(screen.getByLabelText('Format'), {
         target: {
           value: 'HH:mm'
         }
@@ -53,16 +53,16 @@ describe('Configuration component', () => {
 
   describe('timezone', () => {
     it('renders timezone selector', () => {
-      const { getByText } = renderComponent()
+      renderComponent()
 
-      expect(getByText('America/Los_Angeles')).toBeInTheDocument()
-      expect(getByText('Europe/London')).toBeInTheDocument()
+      expect(screen.getByText('America/Los_Angeles')).toBeInTheDocument()
+      expect(screen.getByText('Europe/London')).toBeInTheDocument()
     })
 
     it('dispatches action when selecting timezone', () => {
-      const { getByLabelText } = renderComponent()
+      renderComponent()
 
-      fireEvent.change(getByLabelText('Timezone'), {
+      fireEvent.change(screen.getByLabelText('Timezone'), {
         target: {
           value: 'Europe/London'
         }

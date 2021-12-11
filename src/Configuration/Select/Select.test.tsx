@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import { Select } from './Select'
 
 describe('Select component', () => {
@@ -8,36 +8,36 @@ describe('Select component', () => {
 
   describe('rendering', () => {
     it('renders name', () => {
-      const { getByText } = render(
+      render(
         <Select name="Some Name" items={items} onSelection={onSelectionMock} />
       )
 
-      expect(getByText('Some Name')).toBeInTheDocument()
+      expect(screen.getByText('Some Name')).toBeInTheDocument()
     })
 
     it('renders a select input with a list of items', () => {
-      const { getByText } = render(
+      render(
         <Select name="Some Name" items={items} onSelection={onSelectionMock} />
       )
 
-      expect(getByText('item1')).toBeInTheDocument()
-      expect(getByText('item2')).toBeInTheDocument()
-      expect(getByText('item3')).toBeInTheDocument()
+      expect(screen.getByText('item1')).toBeInTheDocument()
+      expect(screen.getByText('item2')).toBeInTheDocument()
+      expect(screen.getByText('item3')).toBeInTheDocument()
     })
   })
 
   describe('selected element', () => {
     it('defaults to first item when no selected element provided', () => {
-      const { getByLabelText } = render(
+      render(
         <Select name="Some Name" items={items} onSelection={onSelectionMock} />
       )
 
-      const select = getByLabelText('Some Name') as HTMLSelectElement
+      const select = screen.getByLabelText('Some Name') as HTMLSelectElement
       expect(select.value).toEqual('item1')
     })
 
     it('selected provided element', () => {
-      const { getByLabelText } = render(
+      render(
         <Select
           name="Some Name"
           items={items}
@@ -46,18 +46,18 @@ describe('Select component', () => {
         />
       )
 
-      const select = getByLabelText('Some Name') as HTMLSelectElement
+      const select = screen.getByLabelText('Some Name') as HTMLSelectElement
       expect(select.value).toEqual('item2')
     })
   })
 
   describe('onSelection', () => {
     it('trigger onSelection action when selected', () => {
-      const { getByLabelText } = render(
+      render(
         <Select name="Some Name" items={items} onSelection={onSelectionMock} />
       )
 
-      const select = getByLabelText('Some Name') as HTMLSelectElement
+      const select = screen.getByLabelText('Some Name') as HTMLSelectElement
       fireEvent.change(select, {
         target: {
           value: 'item3'
