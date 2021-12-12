@@ -3,10 +3,10 @@ import { getTimeZones } from '@vvo/tzdb'
 import { DateTime } from 'luxon'
 import * as React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { CombinedState } from '../types'
+import { CombinedState } from '../../../types'
 import { updateFormat, updateTimezone } from './actions'
-import { ClosablePanel } from './ClosablePanel'
-import { Select } from './Select'
+import { ClosablePanel } from '../../molecules'
+import { Select } from '../../atoms'
 import { Format } from './types'
 
 const formats: Format[] = ['HH:mm:ss', 'h:mm:ss a', 'HH:mm', 'h:mm a']

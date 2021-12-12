@@ -1,1 +1,0 @@
-export { ClosablePanel } from './ClosablePanel'

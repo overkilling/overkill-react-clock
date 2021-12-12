@@ -1,5 +1,5 @@
-import { ClockState } from './Clock/types'
-import { ConfigurationState } from './Configuration/types'
+import { ClockState } from './ui/pages/Clock/types'
+import { ConfigurationState } from './ui/pages/Configuration/types'
 
 export interface CombinedState {
   clock: ClockState
