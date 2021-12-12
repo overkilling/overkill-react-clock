@@ -70,3 +70,4 @@ And to run it
 - [Refactor directory structure into components](432f670d0fa403259ebafe38bae5f4fd28eb33dd)
 - [Introduce snapshot testing](0d828f1e0bc497d169857acf0d1e01eae4dcc712)
 - [Add storybooks](0f4ad976f6e139c84caf9acf1c8b48e3c69f57a5)
+- [Convert project structure to use Atomic Design](e66a534ce8cbfc577bd10950feeb393e44c837a0)
